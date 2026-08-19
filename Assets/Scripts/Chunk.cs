@@ -19,6 +19,8 @@ public class Chunk : MonoBehaviour
 
         for (int i = 0; i < fencesToSpawn; i++)
         {
+            if(availableLanes.Count <= 0) break;
+            
             int randomLaneIndex = Random.Range(0, availableLanes.Count);
             int selectedLane = availableLanes[randomLaneIndex];
             availableLanes.RemoveAt(randomLaneIndex);
