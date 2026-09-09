@@ -3,14 +3,8 @@ using UnityEngine;
 public class PlayerCollisionHandler : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void OnCollisionEnter(Collision other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("Collision Detected with: " + other.gameObject.name);
     }
 }
