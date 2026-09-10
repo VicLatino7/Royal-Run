@@ -2,9 +2,23 @@ using UnityEngine;
 
 public class PlayerCollisionHandler : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] Animator animator;
+    [SerializeField] float collisionCooldown = 1f;
+    
+    const string hitString = "Hit";
+
+    float cooldownTimer = 0f;
+
+    void Update()
+    {
+        cooldownTimer += Time.deltaTime;
+    }
     void OnCollisionEnter(Collision other)
     {
-        Debug.Log("Collision Detected with: " + other.gameObject.name);
+        if (cooldownTimer <= collisionCooldown) return;
+        {
+            animator.SetTrigger(hitString);
+            cooldownTimer = 0f;
+        }
     }
 }

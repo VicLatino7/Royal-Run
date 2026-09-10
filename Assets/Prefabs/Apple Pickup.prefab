@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3149345216973035632}
-  - component: {fileID: -6341827046464038419}
   - component: {fileID: -2900300736898826641}
+  - component: {fileID: -598553226954067653}
   m_Layer: 0
   m_Name: Apple Pickup
   m_TagString: Untagged
@@ -34,18 +34,6 @@ Transform:
   - {fileID: 8229075762687433120}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-6341827046464038419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7308507451397078971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c987069ee3296843a271d5af20c4459, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Pickup
 --- !u!136 &-2900300736898826641
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -68,7 +56,20 @@ CapsuleCollider:
   m_Radius: 0.08
   m_Height: 0.1
   m_Direction: 1
-  m_Center: {x: 0.4, y: 0.18, z: 0}
+  m_Center: {x: 0, y: 0.08, z: 0}
+--- !u!114 &-598553226954067653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7308507451397078971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6508337f707d4ca46a4fa39c96b54a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Apple
+  rotationSpeed: 100
 --- !u!1 &8747843561414660462
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,11 +116,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7004149280754460943, guid: 37cc5698a53a6bf478be4c88a8e64e9c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7004149280754460943, guid: 37cc5698a53a6bf478be4c88a8e64e9c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7004149280754460943, guid: 37cc5698a53a6bf478be4c88a8e64e9c, type: 3}
       propertyPath: m_LocalPosition.z
