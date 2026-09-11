@@ -2,9 +2,31 @@ using UnityEngine;
 
 public class PlayerCollisionHandler : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] Animator animator;
+    [SerializeField] float collisionCooldown = 1f;
+    [SerializeField] float adjustChangeMoveSpeedAmount = -2f;
+    
+    const string hitString = "Hit";
+    float cooldownTimer = 0f;
+
+    LevelGenerator levelGenerator;
+
+    void Start()
+    {
+        levelGenerator = FindFirstObjectByType<LevelGenerator>();
+    }
+
+    void Update()
+    {
+        cooldownTimer += Time.deltaTime;
+    }
     void OnCollisionEnter(Collision other)
     {
-        Debug.Log("Collision Detected with: " + other.gameObject.name);
+        if (cooldownTimer <= collisionCooldown) return;
+        {
+            levelGenerator.ChangeChunkMoveSpeed(adjustChangeMoveSpeedAmount);
+            animator.SetTrigger(hitString);
+            cooldownTimer = 0f;
+        }
     }
 }

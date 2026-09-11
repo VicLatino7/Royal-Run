@@ -7,11 +7,13 @@ public class Chunk : MonoBehaviour
     [SerializeField] GameObject applePrefab;
     [SerializeField] GameObject coinPrefab;
 
+    [SerializeField] float pickupHeight = 0.5f;
+
     [SerializeField] float appleSpawnChance = 0.3f;
     [SerializeField] float coinSpawnChance = 0.5f;
     [SerializeField] float coinSeperationLength = 2f;
 
-    [SerializeField] float[] lanes = {-4.15f, -1.21f, 1.71f};
+    [SerializeField] float[] lanes = {-3f, 0f, 3f};
 
     List<int> availableLanes = new List<int> { 0, 1, 2 };
     void Start()
@@ -43,7 +45,7 @@ public class Chunk : MonoBehaviour
 
         int selectedLane = SelectLane(); // Select a lane for the apple
 
-        Vector3 spawnPosition = new Vector3(lanes[selectedLane], transform.position.y, transform.position.z);
+        Vector3 spawnPosition = new Vector3(lanes[selectedLane], pickupHeight, transform.position.z);
         Instantiate(applePrefab, spawnPosition, Quaternion.identity, this.transform);   
     }
 
@@ -62,7 +64,7 @@ public class Chunk : MonoBehaviour
         for (int i = 0; i < coinsToSpawn; i++) // Loop to spawn coins
         {
             float spawnPositionZ = topOfChunkZPos - (i * coinSeperationLength); // Calculate the Z position for each coin based on the separation length
-            Vector3 spawnPosition = new Vector3(lanes[selectedLane], transform.position.y, spawnPositionZ);
+            Vector3 spawnPosition = new Vector3(lanes[selectedLane], pickupHeight, spawnPositionZ);
             Instantiate(coinPrefab, spawnPosition, Quaternion.identity, this.transform);   
         
         }

@@ -695,8 +695,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 524130398}
   m_Father: {fileID: 0}
@@ -824,6 +824,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2ad1bb5b2e84bc4797f255d4ca3f6de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCollisionHandler
+  animator: {fileID: 2112515001}
+  collisionCooldown: 1
 --- !u!1001 &1885982685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -884,6 +886,11 @@ PrefabInstance:
 --- !u!4 &2112515000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6410221756858730007, guid: dcbc89efbe5bd174b99e07c76bd0b6bf, type: 3}
+  m_PrefabInstance: {fileID: 1885982685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2112515001 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1014860696115371117, guid: dcbc89efbe5bd174b99e07c76bd0b6bf, type: 3}
   m_PrefabInstance: {fileID: 1885982685}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
