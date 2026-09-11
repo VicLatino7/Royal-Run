@@ -5,7 +5,9 @@ using Unity.Cinemachine;
 
 public class CameraController : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] ParticleSystem speedupParticleSystem;
+    [Header("FOV Settings")]
     [SerializeField] float minFOV = 60f;
     [SerializeField] float maxFOV = 90f;
     [SerializeField] float zoomDuration = 1f;
